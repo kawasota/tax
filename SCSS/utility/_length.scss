@@ -1,0 +1,38 @@
+
+// Length patarn a (1280px)
+@function lg_a($value) {
+  $value_var: #{ $value / 1280 * 100% } ;
+  @return #{$value_var};
+}
+
+// Length patarn b (1280px)
+@function lg_b($value) {
+  $value_var: #{ 100 / 1280 * $value} + vw ;
+  @return #{$value_var};
+}
+
+// Length patarn c ( 795px / top )
+@function lg_c($value) {
+  $value_var: #{ $value / 795 * 100% } ;
+  @return #{$value_var};
+}
+
+// Length patarn d ( 579px / book )
+@function lg_d($value) {
+  $value_var: #{ $value / 579 * 100% } ;
+  @return #{$value_var};
+}
+
+
+// Length patarn sp_a (375px)
+@function lg_sp_a($value) {
+  $value_var: #{ $value / 375 * 100% } ;
+  @return #{$value_var};
+}
+
+// Length patarn sp_b (263px)
+@function lg_sp_b($value) {
+  $value_var: #{ $value / 263 * 100% } ;
+  @return #{$value_var};
+}
+

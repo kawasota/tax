@@ -1,0 +1,98 @@
+@forward '../foundation/variable';
+@use '../foundation/variable' as v;
+
+@forward '../utility/length';
+@use '../utility/length'as l;
+
+@forward '../foundation/mixin';
+@use '../foundation/mixin' as m;
+
+
+.footer {
+  background-color: v.$color-footer-background;
+
+  @include m.mq-down('sp') {
+    margin-top: 37%;
+    padding-bottom: 25%;
+  }
+
+  .container {
+    color: v.$color-footer-credit;
+    font-family: v.$font_d;
+    font-weight: bold;
+    padding: min( l.lg_a(92), 92px) 0 min( l.lg_a(89), 89px) 0;
+    white-space: nowrap;
+  }
+
+    .credit {
+      display: flex;
+      justify-content: center;
+    }
+
+      .director {
+        position: relative;
+        left: -3.75em;
+        font-size: v.fs_a(16);
+
+        @include m.mq-down('sp') {
+          font-size: v.fs_b(16);
+          left: -1.17em;
+          top: 0.38em;
+        }
+
+      .colon {
+        position: relative;
+        left: 0.26em;
+        top: 0.14em;
+
+        @include m.mq-down('sp') {
+          font-size: v.fs_b(16);
+        }
+      }
+
+      .name-a {
+        font-size: v.fs_a(16);
+        position: relative;
+        left: 0.3em;
+        top: 0.16em;
+
+        @include m.mq-down('sp') {
+          font-size: v.fs_b(16);
+          margin-left: -1%;
+        }
+      }
+      }
+
+      .markup {
+        position: relative;
+        left: 0.48em;
+        font-size: v.fs_a(16);
+
+        @include m.mq-down('sp') {
+          font-size: v.fs_b(16);
+          left: 1.43em;
+          top: 0.4em;
+        }       
+
+      .colon {
+        position: relative;
+        left: 0.3em;
+        top: 0.15em;
+
+        @include m.mq-down('sp') {
+          font-size: v.fs_b(16);
+        }
+      }
+
+      .name-b {
+        position: relative;
+        left: 0.3em;
+        top: 0.16em;
+        font-size: v.fs_a(16);
+
+        @include m.mq-down('sp') {
+          font-size: v.fs_b(16);
+        }
+      }
+      }
+}

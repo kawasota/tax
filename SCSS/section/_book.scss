@@ -1,0 +1,197 @@
+
+@forward '../foundation/variable';
+@use '../foundation/variable' as v;
+
+@forward '../utility/length';
+@use '../utility/length'as l;
+
+@forward '../foundation/mixin';
+@use '../foundation/mixin' as m;
+
+
+.book {
+  background-color: v.$color-book-backgroud;
+  padding-top: min( l.lg_a(188), 188px);
+  padding-bottom: min( l.lg_a(149), 149px);
+
+  @include m.mq-down('md'){
+    .md-none{
+      display: none;
+    }
+  }
+
+  @include m.mq-down('sp'){
+    padding-top: l.lg_sp_a(125);
+    padding-bottom: 30.3%;
+  }
+
+  .container {
+    max-width: 1002px;
+    width: l.lg_a(1002);
+    margin: 0 auto;
+
+    @include m.mq-down('sp') {
+      width: auto;
+    }
+  }
+  
+    &-heading {
+      font-family: v.$font_a;
+      font-size: v.fs_a(80);
+      color: v.$color-book-heading;
+      letter-spacing: 0.05em;
+      padding-bottom: calc( 106 / 1002 * 100%);
+      position: relative;
+      width: fit-content;
+      margin: 0 auto;
+
+      @include m.mq-down('md') {
+        font-size: v.fs_a(75);
+      }
+
+      @include m.mq-down('sp') {
+        font-size: v.fs_b(23);
+        letter-spacing: 0.08em;
+        display: block;
+        padding-bottom: 13.9%;
+      }
+    
+      &:before, &:after {
+        content: '';
+        position: absolute;
+        border-radius: 11px;
+        color: v.$color-book-heading-deco;
+      }
+
+      &:before {
+        top: 2%;
+        height: 51%;
+        border-left: solid min( calc( 100 / 1280 * 14vw ), 14px);
+        left: -7%;
+        transform: rotate(-32.2deg);
+
+        @include m.mq-down('sp') {
+          top: 9%;
+          left: -7.7%;
+          height: 36%;
+        }
+      }
+      
+      &:after {
+        top: 2.4%;
+        right: -3.1%;
+        height: 51%;
+        border-right: solid min( calc( 100 / 1280 * 14vw ), 14px);
+        transform: rotate(30deg);
+
+        @include m.mq-down('sp') {
+          top: 9%;
+          right: -4.1%;
+          height: 36%;
+        }
+      }
+    }
+
+    .book-introduction {
+      display: flex;
+
+      @include m.mq-down('md') {
+        flex-direction: column;
+      }
+    }
+
+      .book-introduction-img {
+        width: min( calc( 100 / 1280 * 330vw ), 330px);
+        margin-top: calc( 14 / 1002 * 100% );
+        align-self: flex-start;
+        box-shadow: min(1vw,14px) max(-1vw, -14px);
+
+        @include m.mq-down('md') {
+          width: 40vw;
+          margin: 0 auto;
+        }
+      
+        @include m.mq-down('sp') {
+          width: 88.8%;
+          margin-top: -2%;
+          box-shadow: min(3vw,9px) max(-3vw,-10px);
+        }
+      }
+
+    .book-introduction {
+
+      &-detail {
+        padding-left: min( calc( 100 / 1280 * 93.67vw ), 93.67px);
+        padding-top: calc( 3 / 1002 * 100% );
+        
+        @include m.mq-down('sp') {
+          padding-left: 0;
+          width: 90%;
+          margin: 0 auto;
+        }
+      }
+
+        &-desc {
+          font-family: v.$font_d;
+          font-weight: bold;
+          color: v.$color-book-introduction-desc;
+          font-size: v.fs_a(20);
+          line-height: 1.7;
+          width: calc( 100 / 1280 * 579vw );
+          max-width: 579px;
+
+          @include m.mq-down('md') {
+            padding-left: 17.6%;
+            margin-top: 8%;
+            width: 56%;
+          }
+        
+          @include m.mq-down('sp') {
+            font-size: v.fs_b(16);
+            margin-top: 18.9%;
+            width: 100%;
+            line-height: 1.69;
+            padding-left: 0;
+          }
+        }
+
+          @include m.mq-down('sp') {
+            .br:before {
+              content: "\A" ;
+              white-space: pre ;
+            }
+          }
+
+        &-btnlink {
+          font-family: v.$font_c;
+          font-size: v.fs_a(40);
+          font-weight: 500;
+          color: v.$color-book-btnlink-font;
+          display: inline-block;
+          margin-top: l.lg_d(67);
+          margin-left: l.lg_d(84);
+          background-color: v.$color-book-btnlink-backgroud;
+          padding: l.lg_d(26) l.lg_d(115) l.lg_d(26) l.lg_d(119);
+          border-radius: 61px;
+          box-shadow: 0.16em 0.23em;
+          transition: .3s;
+
+          &:hover {
+            transform: translateY(5px);
+            box-shadow: 0 0;
+          }
+        
+          @include m.mq-down('md') {
+            margin-left: 15.68%;
+          }
+
+          @include m.mq-down('sp') {
+            font-size: v.fs_b(40);
+            margin-top: 27%;
+            margin-left: 1.2%;
+            padding: 4.8% 23.9% 5.1% 23.7%;
+            box-shadow: 0.17em 0.21em;
+          }
+        }
+    }
+}

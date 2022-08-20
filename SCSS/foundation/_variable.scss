@@ -1,0 +1,88 @@
+// * Font * //
+// * Color * //
+// * Media Query * //
+
+
+////////////// Font ////////////// 
+
+// - Font A
+$font_a: fot-tsukuardgothic-std, sans-serif;
+
+// - Font B
+$font_b: fot-tsukubrdgothic-std, sans-serif;
+
+// - Font C
+$font_c: 'Montserrat', sans-serif;
+
+// - Font D
+$font_d: YuGothic, "Yu Gothic", Meiryo, sans-serif;
+
+
+// Font size patarn A
+@function fs_a($value) {
+  $value_var: #{ 100 / 1280 * $value } + vw;
+  $value_max: $value + px;
+  @return min(#{$value_var},#{$value_max});
+}
+
+// Font size patarn B
+@function fs_b($value) {
+  $value_var: #{ 100 / 375 * $value } + vw;
+  @return #{$value_var};
+}
+
+
+////////////// Color ////////////// 
+
+// Palette
+$palette-white: #FFFFFF;
+$pallete-periwinkle_gray: #C4CCEB;
+$palette-black: #000000;
+$palette-black_b: #020202;
+$palette-black_c: #030303;
+$palette-cod_gray: #101010;
+$palette-mine_shaft: #222222;
+$palette-dove_gray: #707070;
+
+
+// Color of section
+
+// - top
+$color-top-backgroud: $pallete-periwinkle_gray;
+$color-top-logo-desc: $palette-cod_gray;
+$color-top-catch: $palette-black;
+$color-top-catch-backgroud: $palette-white;
+$color-top-arrow: $palette-black;
+
+// - check
+$color-check-backgroud: $pallete-periwinkle_gray;
+$color-check-heading: $palette-cod_gray;
+$color-check-border: $palette-white;
+$color-check-score: $palette-mine_shaft;
+$color-check-score-desc: $palette-black;
+
+// - book
+$color-book-backgroud: $pallete-periwinkle_gray;
+$color-book-heading: $palette-black_c;
+$color-book-heading-deco: $palette-white;
+$color-book-introduction-desc: $palette-black;
+$color-book-btnlink-backgroud: $palette-white;
+$color-book-btnlink-font: $palette-black;
+$color-book-btnlink-shadow: $palette-black;
+
+// - author
+$color-author-info: $palette-black;
+$color-author-info-media: $palette-black_b;
+
+// - footer
+$color-footer-background: $pallete-periwinkle_gray;
+$color-footer-credit: $palette-black;
+
+
+////////////// Media Query ////////////// 
+
+$breakpoint-down: (
+"sp": "(max-width: 430px)",
+"md": "(max-width: 660px)",
+);
+
